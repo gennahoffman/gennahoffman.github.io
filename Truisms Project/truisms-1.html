@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link href="css/truisms.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	
+<div> 
+<video id="displayed_video" muted="muted" autoplay="autoplay" loop="loop" >
+  <source src="Video/IMG_5842.mp4" type="video/mp4">
+</video>
+</div>	
+
+<div class="centered_text">
+<h1 id="words" onmouseover="onTruismText()" onmouseout="outTruismText()" onClick="changeVideo()">Boredom Makes You Do Crazy Things </h1>
+</div>
+	
+<script>
+	
+	var channel = 1;
+	var pausedAt = 0;
+	
+	// references to the videos
+	
+	var displayed_video = document.getElementById("displayed_video");
+	
+	// stuff for sound
+	
+	var mySound = new Audio("sound/song.mp3");
+	
+	var walking = "video/video2.mp4";
+	var bed = "video/IMG_5842.mp4";
+	
+function onTruismText(){
+	console.log("clicked truism text")
+	document.getElementById("displayed_video").style.filter = "saturate(200%)";
+}	
+function outTruismText(){
+	console.log("moving out of truism text")
+	document.getElementById("displayed_video").style.filter = "saturate(100%)";
+}
+	
+function changeVideo(){
+	console.log("will change video");
+	pausedAt = displayed_video.currentTime;
+	if (channel ==0){
+		displayed_video.src = walking;
+		displayed_video.currentTime = pausedAt;
+		channel = 1;
+	}
+	else{
+		displayed_video.src = bed;
+		displayed_video.currentTime = pausedAt;
+		channel = 0;
+	}
+	
+	mySound.play();
+}
+	
+</script>
+	
+	
+</body>
+</html>
