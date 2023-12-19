@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Let's Make a Sandwich</title>
+<link href="css/CYOA_sample.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- THE TITLE ABOVE THE VIDEO -->
+
+<h1>You Made A Sandwich </h1>
+
+<!-- THE VIDEO -->
+
+<div class = "vidCenter">
+  <video id="firstphoto" muted="muted" autoplay="autoplay" loop="loop" >
+    <source src="video/IMG_6109.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- THE CAPTION or PARAGRAPH UNDERNEATH THE VIDEO -->
+<!-- this appears when the video reaches its end -->
+
+<p id="caption">
+Don't Like The Sandwich You Made Try Again
+</p>
+
+<!-- THE TWO BUTTONS UNDERNEATH THE CAPTION - CAN EASILY ADD MORE BUTTONS -->
+<!-- these appear when the video reaches its end -->
+
+<div id="DIVforButtons">
+<p>
+<button id="topBTN" onClick="buttonOne()">RESTART</button>  
+</p>    
+</div>
+
+<script>
+
+    document.getElementById('displayedVideo').addEventListener('ended',whenVideoEnds,false);
+        
+    var topBTN = document.getElementById("topBTN");
+    var bottomBTN = document.getElementById("bottomBTN"); 
+   
+    var caption = document.getElementById("caption");    
+
+    caption.style.display = 'none';    
+    topBTN.style.display = 'none';
+    bottomBTN.style.display = 'none';        
+
+    function whenVideoEnds(e) {
+		// these three commands make the caption and the 2 buttons visible
+        caption.style.display = 'block';    
+        topBTN.style.display = 'block';
+        bottomBTN.style.display = 'block';
+    }
+        
+		// MAKE SURE THE WINDOW OPENS THE FILE NAME on YOUR DIRECTORY 
+		// Lines 63 and 64 are the only places you have to make a change
+    function buttonOne() {
+		window.open ('opening.html','self',false)
+    }
+        
+    function buttonTwo() {
+		alert("buttonTwo works");	
+        //window.open ('scene1_2.html','_self',false)
+		//once you make the next HTML file, put it in line 72 and uncomment that line
+		//MAKE SURE TO COMMENT OUT or REMOVE the alerts
+    }    
+        
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Let's Make a Sandwihc</title>
+<link href="css/CYOA_sample.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- THE TITLE ABOVE THE VIDEO -->
+
+<h1>Let's Make a Sandwich </h1>
+
+<!-- THE VIDEO -->
+
+<div class = "vidCenter">    
+<img id="firstphoto" src="photos/IMG_6099.jpeg" width="4032" height="3024" alt="bread"/> </div>
+
+
+<div id="DIVforButtons">
+<p>
+<button id="topBTN" onClick="buttonOne()">Add Meat</button>  
+</p>    
+</div>
+
+<script>
+
+   
+        
+    var topBTN = document.getElementById("topBTN");
+    var bottomBTN = document.getElementById("bottomBTN"); 
+   
+    var caption = document.getElementById("caption");    
+
+    caption.style.display = 'none';    
+    topBTN.style.display = 'none';
+    bottomBTN.style.display = 'none';        
+
+		// MAKE SURE THE WINDOW OPENS THE FILE NAME on YOUR DIRECTORY 
+		// Lines 63 and 64 are the only places you have to make a change
+    function buttonOne() {
+        window.open ('scene1_choice1.html','_self',false)
+    }
+        
+  
+</script>
+    
+</body>
+</html>
